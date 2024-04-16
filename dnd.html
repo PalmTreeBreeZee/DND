@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Document</title>
+<style>
+    h1 {
+        color: aqua;
+        text-align: center;
+    }
+    body {
+        color: forestgreen;
+        text-align: center;
+
+    }
+    * {
+        background-color: black;
+    }
+    button {
+        background-color: forestgreen;
+
+    }
+
+    h3 {
+        color: aqua;
+        text-align: center;
+    }
+
+</style>
+
+</head>
+
+
+
+<body>
+    <h1 id = 'health'>Health</h1>
+    <button id = 'moreHealth'>More Health</button>
+    <button id = 'lessHealth'>Less Health</button>
+    <button id = 'strength'>Strength</button>
+    <button id = 'intellegence'>Intellegence</button>
+    <button id = 'dexterity'>Dexterity</button>
+    <button id = 'wisdom'>Wisdom</button>
+    <button id = 'constitution'>Constitution</button>
+    <button id = 'charisma'>Charisma</button>
+    <h3 id = 'text'>What Stat Do You Want?</h3>
+
+
+</body>
+<script>
+let totHealth = 18
+health = document.querySelector('#health').innerText = totHealth;
+moreHealth = document.querySelector('#moreHealth')
+lessHealth = document.querySelector('#lessHealth')
+strength = document.querySelector('#strength')
+intellegence = document.querySelector('#intellegence')
+dexterity = document.querySelector('#dexterity')
+wisdom = document.querySelector('#wisdom')
+constitution = document.querySelector('#constitution')
+charisma = document.querySelector('#charisma')
+
+h3 = document.querySelector('h3')
+
+let stats = {hp: 18, str: 15, int: 12, dex: 12, wis: 11, con: 12, char: 10} //+10 protection
+let weapons = {spear: '1d6 + 2', sickle: '1d4 + 2'}
+let cantrips = {
+        poisonSpray: '10 feet, roll(1d12)', 
+        frostBite:'look at target 60 feet, roll(1d6)', 
+        mending: 'repairs an object 1 foot in dimention'
+    } 
+let spells_1 = {
+        protectionFEAG: 'casts protection from fey, celestials, abirrations, elementals, fiends, and the undead on target',
+        produceFlame: 'produce flame in the palm of my hand to provide light for 30 feet and dim light 30feet after (can be thrown), roll(1d8)'
+
+    }
+
+
+function getMoreHealth(){
+    totHealth = totHealth + 1
+    console.log(totHealth)
+    document.querySelector('#health').innerText = totHealth
+    return
+}
+
+function getLessHealth(){
+    totHealth = totHealth - 1
+    console.log(totHealth)
+    document.querySelector('#health').innerText = totHealth
+    return
+}
+
+function showStr(){
+    will = document.querySelector('#text').innerText = 'Your strength is: ' + stats['str']
+    console.log(will)
+    return will
+}
+
+function showInt(){
+    will = document.querySelector('#text').innerText = 'Your intellegence is: ' + stats['int']
+    console.log(will)
+    return will
+}
+
+function showDex(){
+    will = document.querySelector('#text').innerText = 'Your dexterity is: ' + stats['dex']
+    console.log(will)
+    return will
+}
+
+function showWis(){
+    will = document.querySelector('#text').innerText = 'Your wisdom is: ' + stats['wis']
+    console.log(will)
+    return will
+}
+
+function showCon(){
+    will = document.querySelector('#text').innerText = 'Your constitution is: ' + stats['con']
+    console.log(will)
+    return will
+}
+
+function showChar(){
+    will = document.querySelector('#text').innerText = 'Your charisma is: ' + stats['char']
+    console.log(will)
+    return will
+}
+moreHealth.addEventListener('click', getMoreHealth)
+lessHealth.addEventListener('click', getLessHealth)
+strength.addEventListener('click', showStr)
+intellegence.addEventListener('click', showInt)
+dexterity.addEventListener('click', showDex)
+wisdom.addEventListener('click', showWis)
+constitution.addEventListener('click', showCon)
+charisma.addEventListener('click', showChar)
+
+function soso(){
+    let stats = {hp: 18, str: 15, int: 12, dex: 12, wis: 11, con: 12, char: 10} //+10 protection
+    let weapons = {spear: '1d6 + 2', sickle: '1d4 + 2'}
+    let cantrips = {
+        poisonSpray: '10 feet, roll(1d12)', 
+        frostBite:'look at target 60 feet, roll(1d6)', 
+        mending: 'repairs an object 1 foot in dimention'
+    } 
+    let spells_1 = {
+        protectionFEAG: 'casts protection from fey, celestials, abirrations, elementals, fiends, and the undead on target',
+        produceFlame: 'produce flame in the palm of my hand to provide light for 30 feet and dim light 30feet after (can be thrown), roll(1d8)'
+
+    }
+    
+    return [stats, weapons, cantrips, spells_1] 
+}
+    console.log(soso())
+    
+</script>
+</html>
